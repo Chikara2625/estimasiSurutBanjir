@@ -7,7 +7,7 @@ from pathlib import Path
 
 # Load the dataset
 # df = pd.read_csv("AI3/datasets/flood_dataset2.csv")
-df = pd.read_csv("AI3/datasets/flood_dataset500data.csv")
+df = pd.read_csv("datasets/flood_dataset500data.csv")
 
 # Filter out invalid training data (where water is not receding)
 train_df = df[df["time_to_recede_min"] > 0]
@@ -28,7 +28,7 @@ y_pred = model_rf.predict(X_test)
 mae = mean_absolute_error(y_test, y_pred)
 
 # Save model
-model_path = Path("AI3/models/aiModel1.pkl")
+model_path = Path("models/aiModel1.pkl")
 model_path.parent.mkdir(parents=True, exist_ok=True)
 joblib.dump(model_rf, model_path)
 

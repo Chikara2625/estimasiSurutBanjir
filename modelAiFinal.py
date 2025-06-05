@@ -18,10 +18,10 @@ def calculate_speed_from_history(heights, timestamps):
 # Simulate current live data + last 3 minutes
 # New data: height = 250, rainfall = 12, current time = minute 8
 current_data = {
-    "height_mm": 250,
+    "height_mm": 50,
 
     #Curah hujan biasanya perjam
-    "rainfall_mm_per_h": 12,
+    "rainfall_mm_per_h": 12, #CARI TAHU MENGENAI INI
     "timestamps": [5, 6, 7, 8],  # minutes
 
     
@@ -45,7 +45,7 @@ current_data = {
 calculated_speed = calculate_speed_from_history(current_data["heights"], current_data["timestamps"])
 
 # Load model from previous training
-model_rf_loaded = joblib.load("AI3/models/aiModel1.pkl")
+model_rf_loaded = joblib.load("models/aiModel1.pkl")
 
 # Make prediction or handle if not receding
 if calculated_speed is not None and calculated_speed > 0:
