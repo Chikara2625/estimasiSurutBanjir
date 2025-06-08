@@ -39,7 +39,7 @@ df = pd.DataFrame({
 })
 
 # Save to CSV
-csv_path = Path("datasets/flood_dataset.csv")
+csv_path = Path("AI3/datasets/flood_dataset.csv")
 csv_path.parent.mkdir(parents=True, exist_ok=True)
 df.to_csv(csv_path, index=False)
 
